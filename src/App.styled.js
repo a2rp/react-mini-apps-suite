@@ -1,4 +1,56 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+/* ---- Hover scrollbar with NO layout shift ----
+   - Width is constant (12px), so content never moves.
+   - Thumb fades from transparent → visible on hover.
+   - scrollbar-gutter keeps layout stable in supporting browsers.
+   - Works in Chromium/Safari (WebKit) + Firefox.
+*/
+const hoverScrollbarStable = css`
+    /* Reserve space so nothing shifts */
+    scrollbar-gutter: stable;
+
+    /* Firefox: keep width thin, color transparent by default */
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+
+    /* WebKit: fixed width always; invisible by default */
+    &::-webkit-scrollbar {
+        width: 12px;
+        height: 12px;
+    }
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: transparent; /* hidden look */
+        border-radius: 8px;
+        border: 3px solid transparent; /* inset effect */
+        background-clip: content-box;
+    }
+
+    /* On hover: only change colors / opacity, not width */
+    @media (hover: hover) {
+        &:hover {
+            scrollbar-color: #666 transparent; /* Firefox thumb color */
+        }
+        &:hover::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #3a3a3a, #666);
+        }
+        &::-webkit-scrollbar-thumb:hover {
+            background: #808080;
+        }
+    }
+
+    /* Touch devices: keep a visible thin thumb for usability */
+    @media (hover: none) {
+        scrollbar-width: thin;
+        scrollbar-color: #555 transparent;
+        &::-webkit-scrollbar-thumb {
+            background: #555;
+        }
+    }
+`;
 
 const Wrapper = styled.div`
     position: relative;
@@ -19,7 +71,6 @@ const Header = styled.div`
 `;
 
 const NavLinkWrapper = styled.div`
-    /* border: 1px solid #333; */
     box-shadow: 0 0 1px 1px #333 inset;
     border-radius: 6px;
     cursor: pointer;
@@ -51,7 +102,6 @@ const Main = styled.div`
 `;
 
 const NavWrapper = styled.div`
-    /* border: 1px solid #333; */
     box-shadow: 0 0 1px 1px #333 inset;
     width: 0;
     flex: 0 0 0;
@@ -66,7 +116,7 @@ const NavWrapper = styled.div`
         width: 250px;
     }
 
-    @media (width<1000px) {
+    @media (width < 1000px) {
         position: fixed;
         top: 70px;
         left: 0;
@@ -75,9 +125,9 @@ const NavWrapper = styled.div`
 
     .navInner {
         width: 250px;
-        /* height: calc(100% - 30px); */
         height: 100%;
         overflow-y: auto;
+        ${hoverScrollbarStable}; /* ← updated mixin here */
 
         a {
             display: flex;
@@ -100,19 +150,16 @@ const NavWrapper = styled.div`
 const Tuts = styled.div``;
 
 const ContentWrapper = styled.div`
-    /* border: 1px solid #f00; */
     box-shadow: 0 0 1px 1px #333 inset;
-    /* flex: 1 1 100%; */
     width: 100%;
-    /* height: calc(100vh - 100px); */
     overflow: auto;
     padding: 15px;
     scroll-behavior: smooth !important;
+    ${hoverScrollbarStable}; /* ← updated mixin here */
 `;
 
 const RoutesWrapper = styled.div`
     min-height: 100vh;
-    /* height: calc(100vh - 100px); */
 `;
 
 const Footer = styled.div`
