@@ -21,8 +21,8 @@
 > Requires Node 18+
 
 ```bash
-git clone https://github.com/a2rp/react-m0ini-apps-suite.git
-cd react-m0ini-apps-suite
+git clone https://github.com/a2rp/react-mini-apps-suite.git
+cd react-mini-apps-suite
 npm i
 npm run dev
 ```
