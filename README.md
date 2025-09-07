@@ -1,32 +1,28 @@
-# ReactJS Handbook
+# React Mini Apps Suite
 
-Bite-sized, expandable React notes that I actually use day-to-day—each topic is a small toggleable component with clear text and copy-paste code.
+> Repo slug: **react-mini-apps-suite**  
+> A router-based collection of small, clean **React** apps-built with **Vite**, **React Router**, and **styled-components**. Every app is frontend-only (no backend), dark-theme friendly, and persists to **LocalStorage**. Clone, run, ship. 🚀
 
-# **Live:** https://a2rp.github.io/reactjs-handbook/
+**Live:** https://a2rp.github.io/react-mini-apps-suite/
 
-# **Code:** https://github.com/a2rp/reactjs-handbook
+---
 
-## What is this?
+## Tech
 
--   A growing handbook of micro-topics (definition, Vite setup, JSX rules, state, effects, routing, performance, etc.).
--   Each topic is a single React component with a clickable title → expands/collapses the tutorial.
--   UI is built with styled-components using a shared Styled object.
--   Focused on local dev first, with simple GitHub Pages deploy when needed.
--   Topics (growing)
-    -   React: definition & inspiration
-    -   Vite install (create app, run dev)
-    -   many more
+-   React 18, React Router DOM
+-   Vite (fast dev/build)
+-   styled-components
+-   GitHub Pages deploy (SPA 404 fallback)
 
-## Quick start (local)
+---
+
+## Getting Started
+
+> Requires Node 18+
 
 ```bash
+git clone https://github.com/a2rp/react-m0ini-apps-suite.git
+cd react-m0ini-apps-suite
 npm i
-npm run dev   # http://localhost:5173
-```
-
-## Build & preview (locally)
-
-```bash
-npm run build
-npm run preview
+npm run dev
 ```
