@@ -1,4 +1,4 @@
-import{d as i,l as Z,r as s,j as t}from"./index-CN7vX727.js";const x="1px solid hsl(0 0% 100% / 0.14)",q="1px solid hsl(0 0% 100% / 0.10)",f="0 0 0 3px hsl(0 0% 100% / 0.15)",r={Page:i.div`
+import{d as i,l as Z,r as s,j as t}from"./index-kkvqZiud.js";const x="1px solid hsl(0 0% 100% / 0.14)",q="1px solid hsl(0 0% 100% / 0.10)",f="0 0 0 3px hsl(0 0% 100% / 0.15)",r={Page:i.div`
         min-height: 100dvh;
     `,Container:i.div`
         max-width: 980px;
