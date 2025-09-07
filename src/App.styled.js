@@ -10,7 +10,7 @@ const Header = styled.div`
     left: 0;
     width: 100%;
     height: 70px;
-    background-color: #000;
+    background-color: #010409;
     display: flex;
     justify-content: space-between;
     align-items: center;
