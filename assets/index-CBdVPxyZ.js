@@ -1,4 +1,4 @@
-import{d as l,l as ee,r as s,j as t}from"./index-BLm_Dx1g.js";const h="1px solid hsl(0 0% 100% / 0.14)",te="1px solid hsl(0 0% 100% / 0.10)",w="0 0 0 3px hsl(0 0% 100% / 0.15)",a={Page:l.div`
+import{d as l,l as ee,r as s,j as t}from"./index-D9eEFYam.js";const h="1px solid hsl(0 0% 100% / 0.14)",te="1px solid hsl(0 0% 100% / 0.10)",w="0 0 0 3px hsl(0 0% 100% / 0.15)",a={Page:l.div`
         min-height: 100dvh;
     `,Container:l.div`
         max-width: 980px;
@@ -14,7 +14,7 @@ import{d as l,l as ee,r as s,j as t}from"./index-BLm_Dx1g.js";const h="1px solid
     `,Title:l.h1`
         font-size: clamp(28px, 3.5vw, 40px);
         line-height: 1.1;
-        margin: 0 0 6px; /* explicit spacer divs are used in index.jsx per your rule */
+        margin: 0 0 6px;
         font-weight: 800;
         letter-spacing: -0.02em;
         color: inherit;
