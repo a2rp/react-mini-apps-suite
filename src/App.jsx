@@ -25,6 +25,8 @@ const PackingListGenerator = lazy(() => import('./pages/apps/packingListGenerato
 const PersonalGoalSetter = lazy(() => import('./pages/apps/personalGoalSetter'))
 const SimpleTimer = lazy(() => import('./pages/apps/simpleTimer'))
 const GiftIdeaList = lazy(() => import('./pages/apps/giftIdeaList'))
+const QuoteCollector = lazy(() => import('./pages/apps/quoteCollector'))
+
 
 const App = () => {
     const [displayNav, setDisplayNav] = useState(true);
@@ -60,6 +62,8 @@ const App = () => {
                             <NavLink to="/personal-goal-setter" title="Personal Goal Setter">Personal Goal Setter</NavLink>
                             <NavLink to="/simple-timer" title="Simple Timer">Simple Timer</NavLink>
                             <NavLink to="/gift-idea-list" title="Gift Idea List">Gift Idea List</NavLink>
+                            <NavLink to="/quote-collector" title="Quote Collector">Quote Collector</NavLink>
+
                         </div>
                     </Styled.NavWrapper>
 
@@ -86,6 +90,7 @@ const App = () => {
                                     <Route path="/personal-goal-setter" element={<PersonalGoalSetter />} />
                                     <Route path="/simple-timer" element={<SimpleTimer />} />
                                     <Route path="/gift-idea-list" element={<GiftIdeaList />} />
+                                    <Route path="/quote-collector" element={<QuoteCollector />} />
 
                                     <Route path="*" element={<NotFound />} />
                                 </Routes>
