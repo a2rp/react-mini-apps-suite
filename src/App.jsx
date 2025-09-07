@@ -5,6 +5,7 @@ import { lazy, Suspense, useState } from 'react'
 import { MdMenuOpen } from 'react-icons/md'
 import { CircularProgress } from '@mui/material'
 import Footer from './components/footer'
+import PackingListGenerator from './pages/apps/packingListGenerator'
 
 const Home = lazy(() => import('./pages/home'));
 const NotFound = lazy(() => import('./pages/notFound'));
@@ -52,6 +53,7 @@ const App = () => {
                             <NavLink to="/todo-list-crud" title="Todo List Crud">Todo List Crud</NavLink>
                             <NavLink to="/water-intake" title="Water Intake">Water Intake</NavLink>
                             <NavLink to="/workout-planner" title="Workout Planner">Workout Plnner</NavLink>
+                            <NavLink to="/packing-list-generator" title="Packing List Generator">Packing List Generator</NavLink>
                         </div>
                     </Styled.NavWrapper>
 
@@ -63,7 +65,7 @@ const App = () => {
                                     <Route path="/home" element={<Home />} />
                                     <Route path="/about" element={<About />} />
 
-                                    <Route path="/book-reading-lit" element={<BookReadingList />} />
+                                    <Route path="/book-reading-list" element={<BookReadingList />} />
                                     <Route path="/calorie-counter" element={<CalorieCounter />} />
                                     <Route path="/grocery-list-manager" element={<GroceryListManager />} />
                                     <Route path="/habit-tracker" element={<HabitTracker />} />
@@ -74,6 +76,7 @@ const App = () => {
                                     <Route path="/todo-list-crud" element={<TodoListCrud />} />
                                     <Route path="/water-intake" element={<WaterIntake />} />
                                     <Route path="/workout-planner" element={<WorkoutPlanner />} />
+                                    <Route path="/packing-list-generator" element={<PackingListGenerator />} />
 
                                     <Route path="*" element={<NotFound />} />
                                 </Routes>
