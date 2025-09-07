@@ -27,6 +27,7 @@ const SimpleTimer = lazy(() => import('./pages/apps/simpleTimer'))
 const GiftIdeaList = lazy(() => import('./pages/apps/giftIdeaList'))
 const QuoteCollector = lazy(() => import('./pages/apps/quoteCollector'))
 const PersonalDashboard = lazy(() => import('./pages/apps/personalDashboard'))
+const ColorPalettePicker = lazy(() => import('./pages/apps/colorPalettePicker'))
 
 
 const App = () => {
@@ -65,6 +66,7 @@ const App = () => {
                             <NavLink to="/gift-idea-list" title="Gift Idea List">Gift Idea List</NavLink>
                             <NavLink to="/quote-collector" title="Quote Collector">Quote Collector</NavLink>
                             <NavLink to="/personal-dashboard" title="Personal Dashboard">Personal Dashboard</NavLink>
+                            <NavLink to="/color-palette-picker" title="Color Palette Picker">Color Palette Picker</NavLink>
 
                         </div>
                     </Styled.NavWrapper>
@@ -94,6 +96,7 @@ const App = () => {
                                     <Route path="/gift-idea-list" element={<GiftIdeaList />} />
                                     <Route path="/quote-collector" element={<QuoteCollector />} />
                                     <Route path="/personal-dashboard" element={<PersonalDashboard />} />
+                                    <Route path="/color-palette-picker" element={<ColorPalettePicker />} />
 
                                     <Route path="*" element={<NotFound />} />
                                 </Routes>

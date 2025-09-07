@@ -72,7 +72,7 @@ export default function PersonalDashboard() {
     const [due, setDue] = useState(""); // YYYY-MM-DD
     const [notes, setNotes] = useState("");
 
-    /* ===== To-Do filters (bottom “Results” block) ===== */
+    /* ===== To-Do filters (bottom "Results" block) ===== */
     const [query, setQuery] = useState("");
     const [fStatus, setFStatus] = useState("All"); // All | Active | Done
     const [sortBy, setSortBy] = useState("created"); // created | title | due
@@ -394,7 +394,7 @@ export default function PersonalDashboard() {
                             {activeQuote ? (
                                 <div style={{ display: "grid", gap: 6 }}>
                                     <div style={{ fontSize: "clamp(16px, 2.2vw, 20px)", lineHeight: 1.6 }}>
-                                        “{activeQuote.text}”
+                                        "{activeQuote.text}"
                                     </div>
                                     <Styled.Muted>— {activeQuote.author || "Unknown"}</Styled.Muted>
                                 </div>
@@ -412,7 +412,7 @@ export default function PersonalDashboard() {
                                 </Styled.Button>
                             </Styled.RowWrap>
 
-                            {/* Add new quote (form) */}
+                            {/* new quote (form) */}
                             <div style={{ marginTop: 12 }}>
                                 <Styled.FormRow>
                                     <Styled.Label title="Quote text">
@@ -435,7 +435,6 @@ export default function PersonalDashboard() {
                                     </Styled.Label>
                                 </Styled.FormRow>
 
-                                {/* Add at the VERY END */}
                                 <Styled.ButtonRow>
                                     <Styled.PrimaryButton type="button" onClick={addQuote} disabled={!qText.trim()}>
                                         Add
@@ -486,7 +485,7 @@ export default function PersonalDashboard() {
 
                     {!title.trim() && <Styled.Helper>Tip: Title is required.</Styled.Helper>}
 
-                    {/* Add button at the VERY END */}
+                    {/* Adding button at the VERY END */}
                     <Styled.ButtonRow>
                         <Styled.PrimaryButton type="submit" disabled={!title.trim()}>
                             Add

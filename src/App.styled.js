@@ -75,6 +75,7 @@ const NavWrapper = styled.div`
 
     .navInner {
         width: 250px;
+        /* height: calc(100% - 30px); */
         height: 100%;
         overflow-y: auto;
 
