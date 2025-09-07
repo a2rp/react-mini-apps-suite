@@ -7,6 +7,7 @@ import { CircularProgress } from '@mui/material'
 import Footer from './components/footer'
 import PackingListGenerator from './pages/apps/packingListGenerator'
 import PersonalGoalSetter from './pages/apps/personalGoalSetter'
+import SimpleTimer from './pages/apps/simpleTimer'
 
 const Home = lazy(() => import('./pages/home'));
 const NotFound = lazy(() => import('./pages/notFound'));
@@ -56,6 +57,7 @@ const App = () => {
                             <NavLink to="/workout-planner" title="Workout Planner">Workout Plnner</NavLink>
                             <NavLink to="/packing-list-generator" title="Packing List Generator">Packing List Generator</NavLink>
                             <NavLink to="/personal-goal-setter" title="Personal Goal Setter">Personal Goal Setter</NavLink>
+                            <NavLink to="/simple-timer" title="Simple Timer">Simple Timer</NavLink>
                         </div>
                     </Styled.NavWrapper>
 
@@ -80,6 +82,7 @@ const App = () => {
                                     <Route path="/workout-planner" element={<WorkoutPlanner />} />
                                     <Route path="/packing-list-generator" element={<PackingListGenerator />} />
                                     <Route path="/personal-goal-setter" element={<PersonalGoalSetter />} />
+                                    <Route path="/simple-timer" element={<SimpleTimer />} />
 
                                     <Route path="*" element={<NotFound />} />
                                 </Routes>
