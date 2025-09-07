@@ -28,7 +28,7 @@ export const Styled = {
     Title: styled.h1`
         font-size: clamp(28px, 3.5vw, 40px);
         line-height: 1.1;
-        margin: 0 0 6px; /* explicit spacer divs are used in index.jsx per your rule */
+        margin: 0 0 6px;
         font-weight: 800;
         letter-spacing: -0.02em;
         color: inherit;
