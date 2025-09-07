@@ -26,6 +26,7 @@ const PersonalGoalSetter = lazy(() => import('./pages/apps/personalGoalSetter'))
 const SimpleTimer = lazy(() => import('./pages/apps/simpleTimer'))
 const GiftIdeaList = lazy(() => import('./pages/apps/giftIdeaList'))
 const QuoteCollector = lazy(() => import('./pages/apps/quoteCollector'))
+const PersonalDashboard = lazy(() => import('./pages/apps/personalDashboard'))
 
 
 const App = () => {
@@ -63,6 +64,7 @@ const App = () => {
                             <NavLink to="/simple-timer" title="Simple Timer">Simple Timer</NavLink>
                             <NavLink to="/gift-idea-list" title="Gift Idea List">Gift Idea List</NavLink>
                             <NavLink to="/quote-collector" title="Quote Collector">Quote Collector</NavLink>
+                            <NavLink to="/personal-dashboard" title="Personal Dashboard">Personal Dashboard</NavLink>
 
                         </div>
                     </Styled.NavWrapper>
@@ -91,6 +93,7 @@ const App = () => {
                                     <Route path="/simple-timer" element={<SimpleTimer />} />
                                     <Route path="/gift-idea-list" element={<GiftIdeaList />} />
                                     <Route path="/quote-collector" element={<QuoteCollector />} />
+                                    <Route path="/personal-dashboard" element={<PersonalDashboard />} />
 
                                     <Route path="*" element={<NotFound />} />
                                 </Routes>
