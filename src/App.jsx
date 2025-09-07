@@ -5,9 +5,6 @@ import { lazy, Suspense, useState } from 'react'
 import { MdMenuOpen } from 'react-icons/md'
 import { CircularProgress } from '@mui/material'
 import Footer from './components/footer'
-import PackingListGenerator from './pages/apps/packingListGenerator'
-import PersonalGoalSetter from './pages/apps/personalGoalSetter'
-import SimpleTimer from './pages/apps/simpleTimer'
 
 const Home = lazy(() => import('./pages/home'));
 const NotFound = lazy(() => import('./pages/notFound'));
@@ -24,6 +21,10 @@ const RecipeBox = lazy(() => import('./pages/apps/recipeBox'));
 const TodoListCrud = lazy(() => import('./pages/apps/todoListCrud'));
 const WaterIntake = lazy(() => import('./pages/apps/waterIntake'));
 const WorkoutPlanner = lazy(() => import('./pages/apps/workoutPlanner'));
+const PackingListGenerator = lazy(() => import('./pages/apps/packingListGenerator'))
+const PersonalGoalSetter = lazy(() => import('./pages/apps/personalGoalSetter'))
+const SimpleTimer = lazy(() => import('./pages/apps/simpleTimer'))
+const GiftIdeaList = lazy(() => import('./pages/apps/giftIdeaList'))
 
 const App = () => {
     const [displayNav, setDisplayNav] = useState(true);
@@ -58,6 +59,7 @@ const App = () => {
                             <NavLink to="/packing-list-generator" title="Packing List Generator">Packing List Generator</NavLink>
                             <NavLink to="/personal-goal-setter" title="Personal Goal Setter">Personal Goal Setter</NavLink>
                             <NavLink to="/simple-timer" title="Simple Timer">Simple Timer</NavLink>
+                            <NavLink to="/gift-idea-list" title="Gift Idea List">Gift Idea List</NavLink>
                         </div>
                     </Styled.NavWrapper>
 
@@ -83,6 +85,7 @@ const App = () => {
                                     <Route path="/packing-list-generator" element={<PackingListGenerator />} />
                                     <Route path="/personal-goal-setter" element={<PersonalGoalSetter />} />
                                     <Route path="/simple-timer" element={<SimpleTimer />} />
+                                    <Route path="/gift-idea-list" element={<GiftIdeaList />} />
 
                                     <Route path="*" element={<NotFound />} />
                                 </Routes>
