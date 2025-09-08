@@ -34,6 +34,7 @@ const WordScrambleGame = lazy(() => import('./pages/apps/wordScrambleGame'))
 const QuizApp = lazy(() => import('./pages/apps/quizApp'))
 const DrawingApp = lazy(() => import('./pages/apps/drawingApp'))
 const StickyNotesApp = lazy(() => import('./pages/apps/stickyNotesApp'))
+const KanbanBoard = lazy(() => import('./pages/apps/kanbanBoard'))
 
 
 const App = () => {
@@ -79,6 +80,7 @@ const App = () => {
                             <NavLink to="/quiz-app" title="Quiz App">Quiz App</NavLink>
                             <NavLink to="/drawing-app" title="Drawing App">Drawing App</NavLink>
                             <NavLink to="/sticky-notes-app" title="Sticky Notes App">Sticky Notes App</NavLink>
+                            <NavLink to="/kanban-board" title="Kanban Board">Kanban Board</NavLink>
                         </div>
                     </Styled.NavWrapper>
 
@@ -114,6 +116,7 @@ const App = () => {
                                     <Route path="/quiz-app" element={<QuizApp />} />
                                     <Route path="/drawing-app" element={<DrawingApp />} />
                                     <Route path="/sticky-notes-app" element={<StickyNotesApp />} />
+                                    <Route path="/kanban-board" element={<KanbanBoard />} />
 
                                     <Route path="*" element={<NotFound />} />
                                 </Routes>
