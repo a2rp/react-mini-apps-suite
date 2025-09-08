@@ -1,4 +1,4 @@
-import{d,j as e}from"./index-Clink-kh.js";const n={Wrapper:d.div`
+import{d,j as e}from"./index-DkC-bgdE.js";const n={Wrapper:d.div`
         padding: 24px;
 
         h1 {
