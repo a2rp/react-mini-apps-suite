@@ -130,7 +130,7 @@ export default function TicTacToeGame() {
         placeAt(i);
     };
 
-    // AI turn effect with “thinking” delay
+    // AI turn effect with "thinking" delay
     useEffect(() => {
         if (!isAITurn) return;
         setAiThinking(true);
@@ -142,7 +142,6 @@ export default function TicTacToeGame() {
             setAiThinking(false);
         }, 600); // small delay for UX
         return () => clearTimeout(id);
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isAITurn, board, nextPlayer]);
 
     // After each completed game, update scores
@@ -153,7 +152,6 @@ export default function TicTacToeGame() {
         } else {
             setScores(s => ({ ...s, [winner]: s[winner] + 1 }));
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [winner]);
 
     const newGame = () => {
@@ -257,7 +255,7 @@ export default function TicTacToeGame() {
                             <Styled.BulletItem>Choose mode: versus AI or play with a friend.</Styled.BulletItem>
                             <Styled.BulletItem>If playing vs AI, pick your mark (X goes first).</Styled.BulletItem>
                             <Styled.BulletItem>Click a cell to place your mark; the app blocks invalid moves.</Styled.BulletItem>
-                            <Styled.BulletItem>Use “New game” to clear the board or “Reset scores” to clear counters (both ask for confirmation when needed).</Styled.BulletItem>
+                            <Styled.BulletItem>Use "New game" to clear the board or "Reset scores" to clear counters (both ask for confirmation when needed).</Styled.BulletItem>
                         </Styled.BulletList>
 
                         {/* space below bullet list */}
