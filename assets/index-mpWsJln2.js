@@ -1,4 +1,4 @@
-import{d as r,l as ee,m as te,r as a,j as t}from"./index-BySW6BSp.js";const f="1px solid hsl(0 0% 100% / 0.14)",y="1px solid hsl(0 0% 100% / 0.10)",k="0 0 0 3px hsl(0 0% 100% / 0.15)",oe=te`
+import{d as r,l as ee,m as te,r as a,j as t}from"./index-Ch0RXzdY.js";const f="1px solid hsl(0 0% 100% / 0.14)",y="1px solid hsl(0 0% 100% / 0.10)",k="0 0 0 3px hsl(0 0% 100% / 0.15)",oe=te`
   from { box-shadow: 0 0 0 0 hsl(200 80% 60% / 0.0); }
   to   { box-shadow: 0 0 0 4px hsl(200 80% 60% / 0.35); }
 `,n={Page:r.div`
