@@ -30,6 +30,7 @@ const PersonalDashboard = lazy(() => import('./pages/apps/personalDashboard'))
 const ColorPalettePicker = lazy(() => import('./pages/apps/colorPalettePicker'))
 const UnitConverter = lazy(() => import('./pages/apps/unitConverter'))
 const TicTacToeGame = lazy(() => import('./pages/apps/ticTacToeGame'))
+const WordScrambleGame = lazy(() => import('./pages/apps/wordScrambleGame'))
 
 
 const App = () => {
@@ -70,7 +71,8 @@ const App = () => {
                             <NavLink to="/personal-dashboard" title="Personal Dashboard">Personal Dashboard</NavLink>
                             <NavLink to="/color-palette-picker" title="Color Palette Picker">Color Palette Picker</NavLink>
                             <NavLink to="/unit-converter" title="Unit Converter">Unit Converter</NavLink>
-                            <NavLink to="/tic-tac-toe-game" title="TicTacToeGame">TicTacToeGame</NavLink>
+                            <NavLink to="/tic-tac-toe-game" title="Tic-Tac-Toe Game">Tic-Tac-Toe Game</NavLink>
+                            <NavLink to="/word-scramble-game" title="Word Scramble Game">Word Scramble Game</NavLink>
 
                         </div>
                     </Styled.NavWrapper>
@@ -103,6 +105,7 @@ const App = () => {
                                     <Route path="/color-palette-picker" element={<ColorPalettePicker />} />
                                     <Route path="/unit-converter" element={<UnitConverter />} />
                                     <Route path="/tic-tac-toe-game" element={<TicTacToeGame />} />
+                                    <Route path="/word-scramble-game" element={<WordScrambleGame />} />
 
                                     <Route path="*" element={<NotFound />} />
                                 </Routes>
