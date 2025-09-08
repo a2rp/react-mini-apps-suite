@@ -31,6 +31,7 @@ const ColorPalettePicker = lazy(() => import('./pages/apps/colorPalettePicker'))
 const UnitConverter = lazy(() => import('./pages/apps/unitConverter'))
 const TicTacToeGame = lazy(() => import('./pages/apps/ticTacToeGame'))
 const WordScrambleGame = lazy(() => import('./pages/apps/wordScrambleGame'))
+const QuizApp = lazy(() => import('./pages/apps/quizApp'))
 
 
 const App = () => {
@@ -73,6 +74,7 @@ const App = () => {
                             <NavLink to="/unit-converter" title="Unit Converter">Unit Converter</NavLink>
                             <NavLink to="/tic-tac-toe-game" title="Tic-Tac-Toe Game">Tic-Tac-Toe Game</NavLink>
                             <NavLink to="/word-scramble-game" title="Word Scramble Game">Word Scramble Game</NavLink>
+                            <NavLink to="/quiz-app" title="Quiz App">Quiz App</NavLink>
 
                         </div>
                     </Styled.NavWrapper>
@@ -106,6 +108,7 @@ const App = () => {
                                     <Route path="/unit-converter" element={<UnitConverter />} />
                                     <Route path="/tic-tac-toe-game" element={<TicTacToeGame />} />
                                     <Route path="/word-scramble-game" element={<WordScrambleGame />} />
+                                    <Route path="/quiz-app" element={<QuizApp />} />
 
                                     <Route path="*" element={<NotFound />} />
                                 </Routes>
