@@ -1,4 +1,4 @@
-import{d as o,l as Z,r as s,j as e,R as pe}from"./index-C6xxe--m.js";const u="1px solid hsl(0 0% 100% / 0.14)",he="1px solid hsl(0 0% 100% / 0.10)",S="0 0 0 3px hsl(0 0% 100% / 0.15)",t={Page:o.div`
+import{d as o,l as Z,r as s,j as e,R as pe}from"./index-nahrugLd.js";const u="1px solid hsl(0 0% 100% / 0.14)",he="1px solid hsl(0 0% 100% / 0.10)",S="0 0 0 3px hsl(0 0% 100% / 0.15)",t={Page:o.div`
         min-height: 100dvh;
     `,Container:o.div`
         max-width: 980px;
