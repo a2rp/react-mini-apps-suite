@@ -29,6 +29,7 @@ const QuoteCollector = lazy(() => import('./pages/apps/quoteCollector'))
 const PersonalDashboard = lazy(() => import('./pages/apps/personalDashboard'))
 const ColorPalettePicker = lazy(() => import('./pages/apps/colorPalettePicker'))
 const UnitConverter = lazy(() => import('./pages/apps/unitConverter'))
+const TicTacToeGame = lazy(() => import('./pages/apps/ticTacToeGame'))
 
 
 const App = () => {
@@ -68,7 +69,8 @@ const App = () => {
                             <NavLink to="/quote-collector" title="Quote Collector">Quote Collector</NavLink>
                             <NavLink to="/personal-dashboard" title="Personal Dashboard">Personal Dashboard</NavLink>
                             <NavLink to="/color-palette-picker" title="Color Palette Picker">Color Palette Picker</NavLink>
-                            <NavLink to="/unit-converter" title="UnitConverter">UnitConverter</NavLink>
+                            <NavLink to="/unit-converter" title="Unit Converter">Unit Converter</NavLink>
+                            <NavLink to="/tic-tac-toe-game" title="TicTacToeGame">TicTacToeGame</NavLink>
 
                         </div>
                     </Styled.NavWrapper>
@@ -100,6 +102,7 @@ const App = () => {
                                     <Route path="/personal-dashboard" element={<PersonalDashboard />} />
                                     <Route path="/color-palette-picker" element={<ColorPalettePicker />} />
                                     <Route path="/unit-converter" element={<UnitConverter />} />
+                                    <Route path="/tic-tac-toe-game" element={<TicTacToeGame />} />
 
                                     <Route path="*" element={<NotFound />} />
                                 </Routes>
