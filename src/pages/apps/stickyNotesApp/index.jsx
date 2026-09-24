@@ -491,7 +491,7 @@ export default function StickyNotesApp() {
                         <Styled.Item key={n.id}>
                             <Styled.ItemLeft>
                                 <Styled.ItemTitle>
-                                    {n.title || "(Untitled)"} —{" "}
+                                    {n.title || "(Untitled)"} -{" "}
                                     <span style={{ opacity: 0.7 }}>
                                         {new Date(n.updatedAt).toLocaleString()}
                                     </span>

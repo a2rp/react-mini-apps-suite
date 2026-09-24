@@ -315,7 +315,7 @@ export default function ColorPalettePicker() {
                         {/* Para 1: what this project is */}
                         <Styled.Sub>
                             Create, preview, and save your own color palettes. Each palette keeps a name, notes,
-                            tags, and multiple swatches — perfect for UI themes, brand kits, or mood boards.
+                            tags, and multiple swatches - perfect for UI themes, brand kits, or mood boards.
                             Everything is stored locally (works offline).
                         </Styled.Sub>
 

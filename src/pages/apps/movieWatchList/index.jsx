@@ -172,7 +172,7 @@ export default function MovieWatchlist() {
                 <Styled.Header>
                     <div>
                         <Styled.Title>Movie Watchlist</Styled.Title>
-                        <Styled.Sub>Save movies to watch, track progress, and rate — LocalStorage.</Styled.Sub>
+                        <Styled.Sub>Save movies to watch, track progress, and rate - LocalStorage.</Styled.Sub>
                     </div>
                     <Styled.BadgeRow>
                         <Styled.Tag>To Watch: {counts.toWatch}</Styled.Tag>

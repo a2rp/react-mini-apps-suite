@@ -304,7 +304,7 @@ export default function SimpleTimer() {
                     <div>
                         <Styled.Title>Simple Timer / Countdown</Styled.Title>
                         <Styled.Sub>
-                            For cooking, workouts, or presentations — persists in LocalStorage.
+                            For cooking, workouts, or presentations - persists in LocalStorage.
                         </Styled.Sub>
                     </div>
                 </Styled.Header>

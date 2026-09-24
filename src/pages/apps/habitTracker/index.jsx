@@ -135,7 +135,7 @@ export default function HabitTracker() {
                 <Styled.Header>
                     <div>
                         <Styled.Title>Habit Tracker</Styled.Title>
-                        <Styled.Sub>Grid-based monthly tracker — LocalStorage. Click a day to toggle.</Styled.Sub>
+                        <Styled.Sub>Grid-based monthly tracker - LocalStorage. Click a day to toggle.</Styled.Sub>
                     </div>
                     <Styled.BadgeRow>
                         <Styled.Tag>Total: {state.habits.length}</Styled.Tag>
@@ -257,7 +257,7 @@ export default function HabitTracker() {
                                             title={st ? `${st} (${key})` : `mark done (${key})`}
                                             aria-label={`Toggle ${h.name} on ${key}`}
                                         >
-                                            {st === "done" ? "✓" : st === "skip" ? "—" : ""}
+                                            {st === "done" ? "✓" : st === "skip" ? "-" : ""}
                                         </Styled.DayCell>
                                     );
                                 })}

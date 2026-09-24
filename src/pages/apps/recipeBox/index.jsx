@@ -187,7 +187,7 @@ export default function RecipeBox() {
                     <div>
                         <Styled.Title>Recipe Box</Styled.Title>
                         <Styled.Sub>
-                            Save your favorite recipes with ingredients & steps — LocalStorage.
+                            Save your favorite recipes with ingredients & steps - LocalStorage.
                         </Styled.Sub>
                     </div>
                     <Styled.BadgeRow>

@@ -290,7 +290,7 @@ export default function PersonalDashboard() {
 
                         {/* Para 1: what this project is */}
                         <Styled.Sub>
-                            A simple homepage that surfaces your day at a glance — quick weather, a focused
+                            A simple homepage that surfaces your day at a glance - quick weather, a focused
                             to-do list, and rotating inspirational quotes. To-dos and quotes are saved locally
                             (offline-friendly).
                         </Styled.Sub>
@@ -364,7 +364,7 @@ export default function PersonalDashboard() {
                                                 {weather.temp != null ? Math.round(weather.temp) : "--"}°C
                                             </Styled.BigNumber>
                                             <div style={{ fontSize: 14, opacity: 0.9 }}>
-                                                {WMAP[weather.code] || "—"}
+                                                {WMAP[weather.code] || "-"}
                                             </div>
                                         </div>
                                         <Styled.ItemMeta style={{ marginTop: 6 }}>
@@ -396,7 +396,7 @@ export default function PersonalDashboard() {
                                     <div style={{ fontSize: "clamp(16px, 2.2vw, 20px)", lineHeight: 1.6 }}>
                                         "{activeQuote.text}"
                                     </div>
-                                    <Styled.Muted>— {activeQuote.author || "Unknown"}</Styled.Muted>
+                                    <Styled.Muted>- {activeQuote.author || "Unknown"}</Styled.Muted>
                                 </div>
                             ) : (
                                 <Styled.Empty>No quotes yet. Add one below.</Styled.Empty>

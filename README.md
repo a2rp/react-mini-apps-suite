@@ -1,63 +1,48 @@
 # React Mini Apps Suite
 
-> Repo slug: **react-mini-apps-suite**  
-> A router-based collection of small, clean **React** apps-built with **Vite**, **React Router**, and **styled-components**. Every app is frontend-only (no backend), dark-theme friendly, and persists to **LocalStorage**. Clone, run, ship. 🚀
+A frontend-only collection of focused React mini apps for everyday tasks, learning and experimentation. The suite uses client-side routing, local browser storage where useful, and a shared responsive shell.
 
-**Live:** https://a2rp.github.io/react-mini-apps-suite/
+![React Mini Apps Suite preview](screenshot.png)
 
----
+## Included apps
 
-## Tech
+- Planning tools: habits, goals, workouts, packing, groceries and tasks
+- Utilities: QR generation, unit conversion, timers, text editing and color palettes
+- Creative and game experiences: drawing, recipes, quotes, quizzes, word scramble and tic-tac-toe
 
--   React 18, React Router DOM
--   Vite (fast dev/build)
--   styled-components
--   GitHub Pages deploy (SPA 404 fallback)
+## Tech stack
 
----
+React, React Router, Vite, styled-components, Material UI and react-icons.
 
-## Getting Started
-
-> Requires Node 18+
+## Run locally
 
 ```bash
-git clone https://github.com/a2rp/react-mini-apps-suite.git
-cd react-mini-apps-suite
-npm i
+npm install
 npm run dev
 ```
 
-## Links
+Build and deploy:
 
-- Portfolio: [https://www.ashishranjan.net](https://www.ashishranjan.net)
-- GitHub: [https://github.com/a2rp](https://github.com/a2rp)
-- CodePen: [https://codepen.io/ash1198](https://codepen.io/ash1198)
-- LinkedIn: [https://www.linkedin.com/in/aashishranjan](https://www.linkedin.com/in/aashishranjan)
-- Facebook: [https://www.facebook.com/theash.ashish/](https://www.facebook.com/theash.ashish/)
-- YouTube: [https://www.youtube.com/@ashishranjan-ashz?sub_confirmation=1](https://www.youtube.com/@ashishranjan-ashz?sub_confirmation=1)
-- Email: [ash.ranjan09@gmail.com](mailto:ash.ranjan09@gmail.com)
+```bash
+npm run lint
+npm run build
+npm run deploy
+```
 
-## Support
-
-- Support: [https://a2rp-donation-page.netlify.app/](https://a2rp-donation-page.netlify.app/)
-- Buy Me A Coffee: [https://buymeacoffee.com/a2rp](https://buymeacoffee.com/a2rp)
-- Patreon: [https://patreon.com/a2rp](https://patreon.com/a2rp)
-<!-- Project links -->
+Live: https://a2rp.github.io/react-mini-apps-suite/
 
 ## Links
 
-- Live: [https://a2rp.github.io/react-mini-apps-suite/](https://a2rp.github.io/react-mini-apps-suite/)
-- Repository: [https://github.com/a2rp/react-mini-apps-suite](https://github.com/a2rp/react-mini-apps-suite)
-- Portfolio: [https://www.ashishranjan.net/](https://www.ashishranjan.net/)
-- GitHub: [https://github.com/a2rp](https://github.com/a2rp)
-- CodePen: [https://codepen.io/ash1198](https://codepen.io/ash1198)
-- LinkedIn: [https://www.linkedin.com/in/aashishranjan](https://www.linkedin.com/in/aashishranjan)
-- Facebook: [https://www.facebook.com/theash.ashish/](https://www.facebook.com/theash.ashish/)
-- YouTube: [https://www.youtube.com/@ashishranjan-ashz?sub_confirmation=1](https://www.youtube.com/@ashishranjan-ashz?sub_confirmation=1)
-- Email: [ash.ranjan09@gmail.com](mailto:ash.ranjan09@gmail.com)
+- Portfolio: https://www.ashishranjan.net/
+- GitHub: https://github.com/a2rp
+- CodePen: https://codepen.io/ash1198
+- LinkedIn: https://www.linkedin.com/in/aashishranjan
+- Facebook: https://www.facebook.com/theash.ashish/
+- YouTube: https://www.youtube.com/@ashishranjan-ashz?sub_confirmation=1
+- Email: mailto:ash.ranjan09@gmail.com
 
 ## Support
 
-- Support: [https://a2rp-donation-page.netlify.app/](https://a2rp-donation-page.netlify.app/)
-- Buy Me a Coffee: [https://buymeacoffee.com/a2rp](https://buymeacoffee.com/a2rp)
-- Patreon: [https://www.patreon.com/a2rp](https://www.patreon.com/a2rp)
+- Support: https://a2rp-donation-page.netlify.app/
+- Buy Me a Coffee: https://buymeacoffee.com/a2rp
+- Patreon: https://patreon.com/a2rp

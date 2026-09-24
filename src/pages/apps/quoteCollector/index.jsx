@@ -258,7 +258,7 @@ export default function QuoteCollector() {
     const copyToClipboard = async (id) => {
         const q = quotes.find((x) => x.id === id);
         if (!q) return;
-        const str = `${q.text} — ${q.author || "Unknown"}${q.source ? ` (${q.source})` : ""}`;
+        const str = `${q.text} - ${q.author || "Unknown"}${q.source ? ` (${q.source})` : ""}`;
 
         let success = false;
         try {
@@ -304,7 +304,7 @@ export default function QuoteCollector() {
                         {/* Para 1: what this project is */}
                         <Styled.Sub>
                             A simple, offline-first place to save your favourite inspirational quotes. Track the
-                            author, source, tags, rating, year and personal notes—everything stays in your
+                            author, source, tags, rating, year and personal notes-everything stays in your
                             browser via LocalStorage.
                         </Styled.Sub>
 

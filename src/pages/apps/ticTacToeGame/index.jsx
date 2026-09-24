@@ -36,15 +36,15 @@ function getWinner(board) {
     return { winner: null, line: [] };
 }
 
-/* Simple AI:
+/* Simple Computer:
    1) Win if possible
    2) Block opponent win
    3) Take center
    4) Take a corner
    5) Take a side
 */
-function aiMove(board, aiMark) {
-    const human = aiMark === "X" ? "O" : "X";
+function computerMove(board, computerMark) {
+    const human = computerMark === "X" ? "O" : "X";
 
     const tryWin = (mark) => {
         for (let i = 0; i < 9; i++) {
@@ -58,7 +58,7 @@ function aiMove(board, aiMark) {
     };
 
     // 1) win
-    let idx = tryWin(aiMark);
+    let idx = tryWin(computerMark);
     if (idx !== -1) return idx;
 
     // 2) block
@@ -86,7 +86,8 @@ export default function TicTacToeGame() {
     const persisted = safeGet();
 
     // settings
-    const [mode, setMode] = useState(persisted.mode ?? "ai");         // "ai" | "friend"
+    const storedMode = persisted.mode === "ai" ? "computer" : persisted.mode;
+    const [mode, setMode] = useState(storedMode ?? "computer");         // "computer" | "friend"
     const [youPlayAs, setYouPlayAs] = useState(persisted.youPlayAs ?? "X"); // "X" | "O"
     const [scores, setScores] = useState(persisted.scores ?? { X: 0, O: 0, draw: 0 });
 
@@ -95,13 +96,13 @@ export default function TicTacToeGame() {
     const [xIsNext, setXIsNext] = useState(persisted.xIsNext ?? true);
     const [confirm, setConfirm] = useState(null);
 
-    // AI UX flag
-    const [aiThinking, setAiThinking] = useState(false);
+    // Computer UX flag
+    const [computerThinking, setComputerThinking] = useState(false);
 
     // winner & UI flags
     const { winner, line } = useMemo(() => getWinner(board), [board]);
     const nextPlayer = xIsNext ? "X" : "O";
-    const isAITurn = mode === "ai" && nextPlayer !== youPlayAs && !winner;
+    const isComputerTurn = mode === "computer" && nextPlayer !== youPlayAs && !winner;
 
     // persist
     useEffect(() => {
@@ -111,7 +112,7 @@ export default function TicTacToeGame() {
     /* -------------------------
        Core move helpers
     ------------------------- */
-    // Place the current nextPlayer mark at index i (used by both human and AI)
+    // Place the current nextPlayer mark at index i (used by both human and Computer)
     const placeAt = (i) => {
         if (board[i] || winner) return false;
         setBoard(prev => {
@@ -123,26 +124,26 @@ export default function TicTacToeGame() {
         return true;
     };
 
-    // Human click handler (blocks when not user's turn in AI mode)
+    // Human click handler (blocks when not user's turn in Computer mode)
     const playAt = (i) => {
         if (board[i] || winner) return;
-        if (mode === "ai" && nextPlayer !== youPlayAs) return; // not your turn
+        if (mode === "computer" && nextPlayer !== youPlayAs) return; // not your turn
         placeAt(i);
     };
 
-    // AI turn effect with "thinking" delay
+    // Computer turn effect with "thinking" delay
     useEffect(() => {
-        if (!isAITurn) return;
-        setAiThinking(true);
+        if (!isComputerTurn) return;
+        setComputerThinking(true);
         const id = setTimeout(() => {
-            const idx = aiMove(board, nextPlayer);
+            const idx = computerMove(board, nextPlayer);
             if (idx !== -1) {
                 placeAt(idx);
             }
-            setAiThinking(false);
+            setComputerThinking(false);
         }, 600); // small delay for UX
         return () => clearTimeout(id);
-    }, [isAITurn, board, nextPlayer]);
+    }, [isComputerTurn, board, nextPlayer]);
 
     // After each completed game, update scores
     useEffect(() => {
@@ -205,7 +206,7 @@ export default function TicTacToeGame() {
     };
 
     const changeMark = (nextMark) => {
-        if (mode !== "ai" || nextMark === youPlayAs) return;
+        if (mode !== "computer" || nextMark === youPlayAs) return;
         if (board.some(Boolean) && !winner) {
             setConfirm({
                 title: "Change your mark?",
@@ -225,8 +226,8 @@ export default function TicTacToeGame() {
 
     const statusText = winner
         ? (winner === "draw" ? "It’s a draw!" : `${winner} wins!`)
-        : isAITurn
-            ? `Turn: ${nextPlayer} — AI thinking…`
+        : isComputerTurn
+            ? `Turn: ${nextPlayer} - Computer thinking…`
             : `Turn: ${nextPlayer}`;
 
     return (
@@ -242,7 +243,7 @@ export default function TicTacToeGame() {
 
                         {/* Para 1: what this project is */}
                         <Styled.Sub>
-                            A clean, offline-first Tic-Tac-Toe you can play solo against a simple AI
+                            A clean, offline-first Tic-Tac-Toe you can play solo against a simple Computer
                             or locally with a friend. It keeps a lightweight scoreboard in your browser
                             (LocalStorage) and highlights the winning line when the game ends.
                         </Styled.Sub>
@@ -252,8 +253,8 @@ export default function TicTacToeGame() {
 
                         {/* Para 2: how to use (steps) */}
                         <Styled.BulletList aria-label="How to use">
-                            <Styled.BulletItem>Choose mode: versus AI or play with a friend.</Styled.BulletItem>
-                            <Styled.BulletItem>If playing vs AI, pick your mark (X goes first).</Styled.BulletItem>
+                            <Styled.BulletItem>Choose mode: versus Computer or play with a friend.</Styled.BulletItem>
+                            <Styled.BulletItem>If playing vs Computer, pick your mark (X goes first).</Styled.BulletItem>
                             <Styled.BulletItem>Click a cell to place your mark; the app blocks invalid moves.</Styled.BulletItem>
                             <Styled.BulletItem>Use "New game" to clear the board or "Reset scores" to clear counters (both ask for confirmation when needed).</Styled.BulletItem>
                         </Styled.BulletList>
@@ -264,10 +265,10 @@ export default function TicTacToeGame() {
 
                     {/* Quick badges */}
                     <Styled.BadgeRow>
-                        <Styled.Tag>Mode: {mode === "ai" ? "AI" : "Friend"}</Styled.Tag>
+                        <Styled.Tag>Mode: {mode === "computer" ? "Computer" : "Friend"}</Styled.Tag>
                         <Styled.Tag>Turn: {winner ? "-" : nextPlayer}</Styled.Tag>
-                        {isAITurn && <Styled.Tag>AI thinking…</Styled.Tag>}
-                        <Styled.Tag tone="muted">Scores — X: {scores.X} • O: {scores.O} • Draw: {scores.draw}</Styled.Tag>
+                        {isComputerTurn && <Styled.Tag>Computer thinking…</Styled.Tag>}
+                        <Styled.Tag tone="muted">Scores - X: {scores.X} • O: {scores.O} • Draw: {scores.draw}</Styled.Tag>
                     </Styled.BadgeRow>
                 </Styled.Header>
 
@@ -281,18 +282,18 @@ export default function TicTacToeGame() {
                                 onChange={(e) => changeMode(e.target.value)}
                                 aria-label="Mode"
                             >
-                                <option value="ai">Play vs AI</option>
+                                <option value="computer">Play vs Computer</option>
                                 <option value="friend">Play with a friend</option>
                             </Styled.Select>
                         </Styled.Label>
 
-                        <Styled.Label title="Choose your mark (AI plays the other)" style={{ opacity: mode === "ai" ? 1 : 0.6 }}>
+                        <Styled.Label title="Choose your mark (Computer plays the other)" style={{ opacity: mode === "computer" ? 1 : 0.6 }}>
                             <Styled.LabelText>Your mark</Styled.LabelText>
                             <Styled.Select
                                 value={youPlayAs}
                                 onChange={(e) => changeMark(e.target.value)}
                                 aria-label="Your mark"
-                                disabled={mode !== "ai"}
+                                disabled={mode !== "computer"}
                             >
                                 <option value="X">X (first)</option>
                                 <option value="O">O (second)</option>
@@ -323,8 +324,8 @@ export default function TicTacToeGame() {
                                 $disabled={
                                     Boolean(cell) ||
                                     Boolean(winner) ||
-                                    (mode === "ai" && nextPlayer !== youPlayAs) ||
-                                    aiThinking
+                                    (mode === "computer" && nextPlayer !== youPlayAs) ||
+                                    computerThinking
                                 }
                                 onClick={() => playAt(i)}
                             >

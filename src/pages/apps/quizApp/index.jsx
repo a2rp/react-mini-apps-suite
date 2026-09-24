@@ -556,7 +556,7 @@ export default function QuizApp() {
                         <Styled.Item key={a.id}>
                             <Styled.ItemLeft>
                                 <Styled.ItemTitle>
-                                    {a.topic} • {a.difficulty} — {a.correct}/{a.total} ({Math.round(100 * a.correct / a.total)}%)
+                                    {a.topic} • {a.difficulty} - {a.correct}/{a.total} ({Math.round(100 * a.correct / a.total)}%)
                                 </Styled.ItemTitle>
                                 <Styled.ItemMeta>
                                     <Styled.Tag tone="muted">{fmtDate(a.at)} • {fmtTime(a.at)}</Styled.Tag>

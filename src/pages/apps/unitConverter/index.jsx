@@ -35,7 +35,7 @@ const safeSet = (obj) => {
 /* Clamp + number formatting */
 const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
 const formatNum = (n, decimals = 4) => {
-    if (!isFinite(n)) return "—";
+    if (!isFinite(n)) return "-";
     const d = clamp(Number(decimals) || 0, 0, 12);
     const s = n.toFixed(d);
     return d ? s.replace(/(\.\d*?[1-9])0+$/, "$1").replace(/\.0+$/, "") : s;
@@ -468,7 +468,7 @@ export default function UnitConverter() {
                         <Styled.Sub>
                             A clean, offline-first unit converter with broad coverage: length, mass, temperature,
                             volume, area, speed, pressure, energy, power, time, angle, and data. Convert instantly,
-                            copy the result, and keep a searchable history — everything stays in LocalStorage.
+                            copy the result, and keep a searchable history - everything stays in LocalStorage.
                         </Styled.Sub>
                         <div style={{ height: 6 }} />
                         <Styled.BulletList aria-label="How to use steps">
@@ -539,7 +539,7 @@ export default function UnitConverter() {
                         <Styled.ResultValue>
                             {isFinite(Number(value)) && isFinite(result)
                                 ? `${formatNum(Number(value), decimals)} ${fromUnit} = ${formatNum(result, decimals)} ${toUnit}`
-                                : "—"}
+                                : "-"}
                         </Styled.ResultValue>
                         <Styled.ResultMeta>
                             1 {fromUnit} ={" "}
@@ -550,7 +550,7 @@ export default function UnitConverter() {
                                         : convertLinear(category, fromUnit, toUnit, 1),
                                     decimals
                                 )
-                                : "—"}{" "}
+                                : "-"}{" "}
                             {toUnit}
                         </Styled.ResultMeta>
 

@@ -195,7 +195,7 @@ export default function PasswordManager() {
                     <Styled.Header>
                         <div>
                             <Styled.Title>Password Manager (Local)</Styled.Title>
-                            <Styled.Sub>Master Password UI only — no real encryption. Data stays in your browser.</Styled.Sub>
+                            <Styled.Sub>Master Password UI only - no real encryption. Data stays in your browser.</Styled.Sub>
                         </div>
                     </Styled.Header>
 

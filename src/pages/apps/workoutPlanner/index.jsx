@@ -232,7 +232,7 @@ export default function WorkoutPlanner() {
                 <Styled.Header>
                     <div>
                         <Styled.Title>Workout Planner</Styled.Title>
-                        <Styled.Sub>Create and track your daily workout routines — LocalStorage.</Styled.Sub>
+                        <Styled.Sub>Create and track your daily workout routines - LocalStorage.</Styled.Sub>
                     </div>
                     <Styled.BadgeRow>
                         <Styled.Tag>Total: {counts.total}</Styled.Tag>
@@ -619,7 +619,7 @@ function EditRow({ workout, onCancel, onSave }) {
                                 <li key={x.id} style={{ display: "flex", alignItems: "center", gap: 8 }}>
                                     <span style={{ flex: 1 }}>
                                         <strong>{x.name}</strong>
-                                        {x.sets || x.reps ? ` — ${x.sets || "?"}×${x.reps || "?"}` : ""}
+                                        {x.sets || x.reps ? ` - ${x.sets || "?"}×${x.reps || "?"}` : ""}
                                         {x.weight ? ` @ ${x.weight}kg` : ""}
                                         {x.time ? ` • ${x.time}min` : ""}
                                     </span>

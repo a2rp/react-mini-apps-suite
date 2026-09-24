@@ -437,7 +437,7 @@ export default function KanbanBoard() {
                         <div style={{ height: 6 }} />
                         <Styled.BulletList aria-label="How to use">
                             <Styled.BulletItem>Use the form to add tasks; drag to move across columns.</Styled.BulletItem>
-                            <Styled.BulletItem>Sort view by Updated, Due, or Priority — or keep Manual order.</Styled.BulletItem>
+                            <Styled.BulletItem>Sort view by Updated, Due, or Priority - or keep Manual order.</Styled.BulletItem>
                             <Styled.BulletItem>Edit any card inline; delete with confirmation.</Styled.BulletItem>
                             <Styled.BulletItem>Export/Import your entire board as JSON.</Styled.BulletItem>
                         </Styled.BulletList>
