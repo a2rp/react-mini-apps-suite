@@ -229,7 +229,7 @@ export default function PasswordManager() {
                 <Styled.Header>
                     <div>
                         <Styled.Title>Password Manager (Local)</Styled.Title>
-                        <Styled.Sub>Store website credentials locally. Master Password is a UI-only lock.</Styled.Sub>
+                        <Styled.Sub>Demo only. Entries are stored unencrypted in this browser.</Styled.Sub>
                     </div>
                     <Styled.BadgeRow>
                         <Styled.Tag>Total: {items.length}</Styled.Tag>
@@ -237,6 +237,10 @@ export default function PasswordManager() {
                         <Styled.DangerButton onClick={clearAll} title="Clear all credentials">Clear All</Styled.DangerButton>
                     </Styled.BadgeRow>
                 </Styled.Header>
+
+                <Styled.LockBanner role="note">
+                    <strong>Do not use real passwords:</strong> this demo stores credentials as plaintext in localStorage. The lock screen only hides the interface; it does not encrypt or protect saved entries.
+                </Styled.LockBanner>
 
                 {/* Add form */}
                 <Styled.Card as="form" onSubmit={addItem}>

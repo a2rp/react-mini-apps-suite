@@ -1,14 +1,24 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
+import DOMPurify from "dompurify";
 import { Styled } from "./styled";
 
 /* -------------------------
    Storage & helpers
 ------------------------- */
 const STORAGE_KEY = "textEditor.basic.v1";
+const sanitizeHtml = (html = "") => DOMPurify.sanitize(html, { USE_PROFILES: { html: true } });
+const escapeHtml = (value = "") => {
+    const element = document.createElement("div");
+    element.textContent = value;
+    return element.innerHTML;
+};
 
 /* Safe LocalStorage */
 const safeGet = () => {
-    try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) ?? null; }
+    try {
+        const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
+        return saved ? { ...saved, html: sanitizeHtml(saved.html || "") } : null;
+    }
     catch { return null; }
 };
 const safeSet = (obj) => {
@@ -61,7 +71,7 @@ export default function TextEditorBasic() {
     /* Word/char counts */
     const stats = useMemo(() => {
         const tmp = document.createElement("div");
-        tmp.innerHTML = doc.html || "";
+        tmp.innerHTML = sanitizeHtml(doc.html || "");
         const text = (tmp.textContent || "").trim();
         const words = text ? text.split(/\s+/).length : 0;
         const chars = text.length;
@@ -78,7 +88,7 @@ export default function TextEditorBasic() {
     useEffect(() => {
         const el = editorRef.current;
         if (!el) return;
-        const nextHTML = doc.html || "";
+        const nextHTML = sanitizeHtml(doc.html || "");
         if (el.innerHTML !== nextHTML) {
             el.innerHTML = nextHTML;
         }
@@ -138,7 +148,7 @@ export default function TextEditorBasic() {
 
     /* Editor input -> save (debounced) */
     const onInput = () => {
-        const html = editorRef.current?.innerHTML || "";
+        const html = sanitizeHtml(editorRef.current?.innerHTML || "");
         if (saveTimer.current) clearTimeout(saveTimer.current);
         saveTimer.current = setTimeout(() => {
             setDoc(prev => ({ ...prev, html, updatedAt: Date.now() }));
@@ -208,7 +218,7 @@ export default function TextEditorBasic() {
     /* Export / Import / Print / New */
     const onExportHTML = () => {
         const blob = new Blob(
-            [`<!doctype html><meta charset="utf-8"><title>${doc.title}</title><body>${doc.html}</body>`],
+            [`<!doctype html><meta charset="utf-8"><title>${escapeHtml(doc.title)}</title><body>${sanitizeHtml(doc.html || "")}</body>`],
             { type: "text/html" }
         );
         const a = document.createElement("a");
@@ -234,7 +244,7 @@ export default function TextEditorBasic() {
         if (!file) return;
         const reader = new FileReader();
         reader.onload = () => {
-            const html = String(reader.result || "");
+            const html = sanitizeHtml(String(reader.result || ""));
             setDoc((prev) => ({ ...prev, html, updatedAt: Date.now() }));
             pulse("Imported HTML");
         };
@@ -244,7 +254,7 @@ export default function TextEditorBasic() {
     const doPrint = () => {
         const w = window.open("", "_blank");
         if (!w) return;
-        w.document.write(`<!doctype html><meta charset="utf-8"><title>${doc.title}</title><body>${doc.html}</body>`);
+        w.document.write(`<!doctype html><meta charset="utf-8"><title>${escapeHtml(doc.title)}</title><body>${sanitizeHtml(doc.html || "")}</body>`);
         w.document.close();
         w.focus();
         w.print();

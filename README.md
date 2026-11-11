@@ -1,6 +1,6 @@
 # React Mini Apps Suite
 
-A frontend-only collection of focused React mini apps for everyday tasks, learning and experimentation. The suite uses client-side routing, local browser storage where useful, and a shared responsive shell.
+A frontend-only Vite collection of React mini apps for productivity, personal tracking, creative tools, and casual games. The suite uses client-side routing, local browser storage where useful, and a shared responsive shell.
 
 ![React Mini Apps Suite preview](screenshot.png)
 
@@ -9,6 +9,8 @@ A frontend-only collection of focused React mini apps for everyday tasks, learni
 - Planning tools: habits, goals, workouts, packing, groceries and tasks
 - Utilities: QR generation, unit conversion, timers, text editing and color palettes
 - Creative and game experiences: drawing, recipes, quotes, quizzes, word scramble and tic-tac-toe
+
+Security note: Password Manager is a learning demo. It stores entries as plaintext in localStorage, and its lock screen is cosmetic. Do not store real passwords.
 
 ## Tech stack
 

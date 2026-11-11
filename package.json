@@ -15,6 +15,7 @@
                          "@emotion/react":  "^11.14.0",
                          "@emotion/styled":  "^11.14.1",
                          "@mui/material":  "^7.3.2",
+                         "dompurify":  "^3.4.17",
                          "jsqr":  "^1.4.0",
                          "qrcode":  "^1.5.4",
                          "react":  "^18.2.0",
@@ -34,6 +35,6 @@
                             "globals":  "^16.0.0",
                             "vite":  "^6.3.5"
                         },
-    "description":  "A collection of focused React mini apps for everyday tasks, learning and experimentation.",
+    "description":  "Vite collection of React mini apps for productivity, personal tracking, creative tools, and casual games.",
     "homepage":  "https://a2rp.github.io/react-mini-apps-suite/"
 }
